@@ -1,31 +1,36 @@
 # MarketMix Shoesapp
+
 Basically a shoesapp.
 
 ## Prerequisites
 
 - Vue.js cli installed. To install cli run this command `npm install -g @vue/cli`. To check if the cli is already installed run the following command `vue --version`.
 
-## Running Project 
+## Running Project
 
 ### Project setup
+
 ```
-npm install
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-npm run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
+
 ```
-npm run build
+yarn build
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## Test 
+## Test
 
 ![Demo Gif](/images/demo.gif)
 
