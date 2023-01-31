@@ -26,12 +26,12 @@
           style="padding-top: 0.1em; padding-bottom: 0.1rem"
           class="flex items-center text-xs px-3 bg-green-200 text-green-800 rounded-full"
         >
-          25%
+          100%
         </div>
       </div>
     </div>
     <div>
-      <div class="font-bold text-2xl text-center">1</div>
+      <div class="font-bold text-2xl text-center">{{ Settlement }} COP</div>
       <div class="font-bold text-sm">Liquidación</div>
     </div>
   </div>
@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  props: ["baseSalary", "rolPath", "rol"],
+  props: ["Settlement", "rolPath", "rol"],
   name: "Settlement",
 };
 </script>

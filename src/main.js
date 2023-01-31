@@ -9,6 +9,8 @@ import {
   Settlement,
   Collapse,
   Navigation,
+  ExtraHour,
+  HourOfWork,
 } from "./components/";
 
 import "./index.css";
@@ -17,6 +19,8 @@ Vue.component("Login", Login);
 Vue.component("Card", Card);
 Vue.component("SalaryCard", SalaryCard);
 Vue.component("Settlement", Settlement);
+Vue.component("ExtraHour", ExtraHour);
+Vue.component("HourOfWork", HourOfWork);
 Vue.component("Collapse", Collapse);
 Vue.component("Navigation", Navigation);
 

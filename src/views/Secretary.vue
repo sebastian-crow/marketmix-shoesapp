@@ -5,12 +5,6 @@
     <div
       class="absolute top-8 right-10 w-30 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
     >
-      <!-- <button
-        v-on:click="this.$parent.logout"
-        class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
-      >
-        Logout
-      </button> -->
       <button
         v-on:click="this.$parent.logout"
         class="inline-flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
@@ -26,9 +20,7 @@
       </h1>
     </div>
     <div class="h-96 w-full relative">
-      <div
-        class="flex sm:flex-row flex-col gap-2 space-y-0 sm:space-x-2 flex-row w-full items-center justify-center h-full"
-      >
+      <div class="mt-10 flex flex-row items-center justify-center gap-4">
         <SalaryCard
           rol="Secretario/a"
           rolPath="Secretary"
@@ -37,7 +29,19 @@
         <Settlement
           rol="Secretario/a"
           rolPath="Secretary"
-          :baseSalary="this.$parent.userData.secretary.baseSalary"
+          :Settlement="salary"
+        />
+      </div>
+      <div class="mt-8 pb-10 flex flex-row items-center justify-center gap-4">
+        <HourOfWork
+          rol="Secretario/a"
+          rolPath="Secretary"
+          :hourOfWork="hourOfWork"
+        />
+        <ExtraHour
+          rol="Secretario/a"
+          rolPath="Secretary"
+          :ExtraHour="extraHour"
         />
       </div>
       <Collapse
@@ -48,11 +52,17 @@
         </template>
         <template v-slot:content>
           <div class="accordion-body-1">
-            <div class="accordion-content">
-              <p>
-                adadsdadadjkahdjkahskdadadadadssssssssssssssssssssssssssshj
-                dsdadadjkahdjkahskdadadadadssssssssssssssssssssssssssshaksdahkdkj
+            <div class="accordion-content h-48">
+              <p class="text-start">
+                La liquidación para el secretario/a se hace teniendo en cuenta
+                las siguientes variables:<br />
               </p>
+              <br />
+              <code
+                >Salario base + número de horas trabajadas <br />
+                = <br />
+                {{ salary }} COP
+              </code>
             </div>
           </div>
         </template>
@@ -65,23 +75,40 @@
 </template>
 
 <script>
-Collapse;
-import { SalaryCard, Settlement, Collapse, Navigation } from "../components";
+import {
+  SalaryCard,
+  Settlement,
+  ExtraHour,
+  HourOfWork,
+  Collapse,
+  Navigation,
+} from "../components";
 
 export default {
-  name: "Secure",
+  name: "Secretary",
   data() {
-    return {};
+    return {
+      hourOfWork: parseInt(this.$parent.userData.secretary.baseSalary / 240),
+      extraHour: 0,
+      salary: 0,
+    };
+  },
+  methods: {
+    getExtraHour() {
+      this.extraHour = parseInt(this.hourOfWork * (180 / 100));
+    },
+    getSalary() {
+      this.salary =
+        this.$parent.userData.secretary.baseSalary + this.extraHour * 10;
+    },
   },
   mounted() {
     if (!this.$parent.authenticated && !this.$parent.currentRol) {
       this.$router.replace({ name: "Login" });
     }
-    /*   if (this.$parent.currentRol !== "secretary") {
-      this.$router.replace({ name: "Login" });
-    } */
+    this.getExtraHour();
+    this.getSalary();
   },
-  methods: {},
 };
 </script>
 

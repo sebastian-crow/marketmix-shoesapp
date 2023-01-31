@@ -1,7 +1,8 @@
 <template>
   <div class="w-40 grid grid-cols-2">
     <div>
-      <button
+      <router-link
+        to="/Vendor"
         type="button"
         class="rotate-180 text-blue-200 border border-blue-200 hover:bg-blue-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-200 dark:text-blue-200 dark:hover:text-white dark:focus:ring-blue-800 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
       >
@@ -18,11 +19,12 @@
             clip-rule="evenodd"
           ></path>
         </svg>
-        <span class="sr-only">Icon description</span>
-      </button>
+        <span class="sr-only"> </span>
+      </router-link>
     </div>
     <div>
-      <button
+      <router-link
+        to="/Assembler"
         type="button"
         class="text-blue-200 border border-blue-200 hover:bg-blue-800 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-200 dark:text-blue-200 dark:hover:text-white dark:focus:ring-blue-800 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
       >
@@ -40,7 +42,7 @@
           ></path>
         </svg>
         <span class="sr-only">Icon description</span>
-      </button>
+      </router-link>
     </div>
   </div>
 </template>

@@ -27,16 +27,28 @@ export default {
       userData: {
         assembler: {
           baseSalary: 2000000,
-          amountShoesDone: "",
-          assambleShoesCost: "",
-          maxShoesPossible: 100,
+          hourOfWork: 0,
+          extraHour: 0,
+          assambleCost: 50000,
+          amountShoesDone: 1000,
+          amountSneakersDone: 2000,
+          maxShoesPossible: 5000,
+          transport: 140000,
+          children: ["Hijo1", "Hijo2", "Hijo3"],
+          bonusPerChild: 0,
+          salary: 0,
         },
         secretary: {
-          baseSalary: 1000000,
+          baseSalary: 1160000,
+          hourOfWork: 0,
+          extraHour: 0,
+          salary: 0,
         },
         vendor: {
-          baseSalary: 1500000,
+          baseSalary: 1900000,
           salesComision: 3.5,
+          additionalBonification: 0,
+          transport: 140000,
         },
       },
     };
