@@ -17,7 +17,7 @@ export default {
     return {};
   },
   mounted() {
-    if (!this.$parent.authenticated) {
+    if (!this.$parent.authenticated && !this.$parent.currentRol) {
       this.$router.replace({ name: "Login" });
     }
   },

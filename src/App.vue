@@ -1,53 +1,43 @@
 <template>
-  <!--   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link v-if="authenticated" to="/secretary">Secretary</router-link>
-      <router-link v-if="authenticated" to="/vendor">Vendor</router-link>
-      <router-link v-if="authenticated" to="/assambler">Assambler</router-link>
-      <router-link
-        v-if="authenticated"
-        to="/login"
-        v-on:click.native="logout()"
-        replace
-        >Logout</router-link
-      >
-      <router-link v-else to="/login">Login</router-link>
-    </div>
-    <router-view @authenticated="setAuthenticated" />
-  </div> -->
   <div
     id="app"
     class="flex items-center justify-center min-h-screen from-gray-700 via-gray-800 to-gray-900 bg-gradient-to-br"
   >
     <div class="flex min-h-screen items-center justify-center">
       <div
-        class="min-h-1/2 bg-gray-800 border border-gray-900 bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 rounded-2xl"
+        class="m-10 min-h-1/2 bg-gray-800 border border-gray-900 bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 rounded-2xl"
       >
         <router-view @authenticated="setAuthenticated" />
-        <!-- <Login v-if="!authenticated" /> -->
-
-        <!-- <component :is="currentView" /> -->
-        <!--    -->
-        <br />
-        <!-- <p v-show="currentRol">{{ currentRol }}</p> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Login from "./views/Login.vue";
 export default {
   name: "App",
   data() {
     return {
       authenticated: false,
-      // this is only for testing purposes no actual app will have this
-      // an api call will validate user credentials
+      currentRol: JSON.parse(localStorage.getItem("user")) || "",
       mockAccount: {
         rol: "admin",
         pin: "4090",
+      },
+      userData: {
+        assembler: {
+          baseSalary: 2000000,
+          amountShoesDone: "",
+          assambleShoesCost: "",
+          maxShoesPossible: 100,
+        },
+        secretary: {
+          baseSalary: 1000000,
+        },
+        vendor: {
+          baseSalary: 1500000,
+          salesComision: 3.5,
+        },
       },
     };
   },
@@ -57,10 +47,20 @@ export default {
     },
     logout() {
       this.authenticated = false;
+      localStorage.removeItem("user");
+      this.$router.replace({ name: "Login" });
     },
   },
   mounted() {
-    console.log(this.$parent);
+    /*     if (this.currentRol) {
+      switch (this.currentRol) {
+        case "admin":
+          break;
+
+        default:
+          break;
+      }
+    } */
   },
 };
 </script>

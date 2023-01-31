@@ -3,12 +3,8 @@
     class="mx-4 sm:mx-24 md:mx-34 lg:mx-56 mx-auto flex items-center space-y-4 py-16 font-semibold text-gray-500 flex-col"
   >
     <img src="../assets/img/marketmix.png" alt="MarketMix Logo" width="100" />
-    <h1 class="text-white text-2xl">Assembler section</h1>
-    <button>
-      <router-link to="/login" v-on:click.native="this.$parent.logout()" replace
-        >Logout</router-link
-      >
-    </button>
+    <h1 class="text-white text-2xl">Home</h1>
+    <button></button>
   </div>
 </template>
 

@@ -70,6 +70,12 @@ export default {
         );
         if (this.input.rol === user.rol && this.input.pin == user.pin) {
           this.$emit("authenticated", true);
+          this.$parent.currentRol = this.input.rol;
+          const userToStore = {
+            rol: user.rol,
+            pin: CryptoJS.SHA512(user.pin),
+          };
+          localStorage.setItem("user", JSON.stringify(userToStore));
           this.$router.replace({
             name:
               this.input.rol.charAt(0).toUpperCase() + this.input.rol.slice(1),
@@ -81,6 +87,17 @@ export default {
         console.log("A rol and pin must be present");
       }
     },
+  },
+  mounted() {
+    if (!this.$parent.authenticated && this.$parent.currentRol) {
+      this.$router
+        .replace({
+          name:
+            this.$parent.currentRol.rol?.charAt(0).toUpperCase() +
+            this.$parent.currentRol.rol?.slice(1),
+        })
+        .catch(() => {});
+    }
   },
 };
 </script>
