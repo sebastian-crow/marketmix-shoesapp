@@ -11,6 +11,10 @@ import {
   Navigation,
   ExtraHour,
   HourOfWork,
+  MonthSales,
+  Bonification,
+  SalesComision,
+  Transport,
 } from "./components/";
 
 import "./index.css";
@@ -24,6 +28,10 @@ Vue.component("HourOfWork", HourOfWork);
 Vue.component("Collapse", Collapse);
 Vue.component("Navigation", Navigation);
 
+Vue.component("MonthSales", MonthSales);
+Vue.component("Bonification", Bonification);
+Vue.component("SalesComision", SalesComision);
+Vue.component("Transport", Transport);
 Vue.config.productionTip = false;
 
 new Vue({

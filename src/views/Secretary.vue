@@ -59,7 +59,7 @@
               </p>
               <br />
               <code
-                >Salario base + número de horas trabajadas <br />
+                >Salario base + número de horas extra trabajadas <br />
                 = <br />
                 {{ salary }} COP
               </code>
