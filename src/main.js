@@ -15,6 +15,8 @@ import {
   Bonification,
   SalesComision,
   Transport,
+  AssembleCost,
+  AmountShoesSneakersDone,
 } from "./components/";
 
 import "./index.css";
@@ -32,6 +34,9 @@ Vue.component("MonthSales", MonthSales);
 Vue.component("Bonification", Bonification);
 Vue.component("SalesComision", SalesComision);
 Vue.component("Transport", Transport);
+Vue.component("AssembleCost", AssembleCost);
+Vue.component("AmountShoesSneakersDone", AmountShoesSneakersDone);
+
 Vue.config.productionTip = false;
 
 new Vue({

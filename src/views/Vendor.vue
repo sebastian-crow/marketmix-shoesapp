@@ -39,6 +39,7 @@
         <Bonification
           rol="Vendedor/a"
           rolPath="Vendor"
+          bonificationCase="Bonificaciones"
           :bonification="bonification"
           :percentage="percentage"
         />
@@ -67,7 +68,7 @@
           <div class="accordion-body-1">
             <div class="accordion-content h-48">
               <p class="text-start">
-                La liquidación para el secretario/a se hace teniendo en cuenta
+                La liquidación para el vendedor/ra se hace teniendo en cuenta
                 las siguientes variables:<br />
               </p>
               <br />

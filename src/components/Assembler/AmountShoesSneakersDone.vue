@@ -31,15 +31,17 @@
       </div>
     </div>
     <div>
-      <div class="font-bold text-2xl">+ {{ bonification }} COP</div>
-      <div class="font-bold text-sm">{{ bonificationCase }}</div>
+      <div class="font-bold text-2xl">{{ shoesDone }}</div>
+      <div class="font-bold text-sm">Zapatos ensamblados</div>
+      <div class="font-bold text-2xl">{{ sneakersDone }}</div>
+      <div class="font-bold text-sm">Zapatillas ensambladas</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["bonification", "bonificationCase", "rolPath", "rol", "percentage"],
-  name: "Bonification",
+  props: ["sneakersDone", "shoesDone", "rolPath", "rol", "percentage"],
+  name: "AmountShoesSneakersDone",
 };
 </script>

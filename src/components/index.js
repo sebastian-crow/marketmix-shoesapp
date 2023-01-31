@@ -9,4 +9,6 @@ export { default as Navigation } from "./Navigation.vue";
 export { default as SalesComision } from "./Vendor/SalesComision.vue";
 export { default as MonthSales } from "./Vendor/MonthSales.vue";
 export { default as Bonification } from "./Bonification.vue";
+export { default as AssembleCost } from "./Assembler/AssembleCost.vue";
+export { default as AmountShoesSneakersDone } from "./Assembler/AmountShoesSneakersDone.vue";
 export { default as Transport } from "./Transport.vue";

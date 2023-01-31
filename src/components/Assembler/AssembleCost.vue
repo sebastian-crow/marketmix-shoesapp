@@ -26,20 +26,20 @@
           style="padding-top: 0.1em; padding-bottom: 0.1rem"
           class="flex items-center text-xs px-3 bg-purple-200 text-purple-800 rounded-full"
         >
-          + {{ percentage }} %
+          {{ percentage }} %
         </div>
       </div>
     </div>
     <div>
-      <div class="font-bold text-2xl">+ {{ bonification }} COP</div>
-      <div class="font-bold text-sm">{{ bonificationCase }}</div>
+      <div class="font-bold text-2xl">{{ assemblerCost }} COP</div>
+      <div class="font-bold text-[14px]">Costo de ensamble</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["bonification", "bonificationCase", "rolPath", "rol", "percentage"],
-  name: "Bonification",
+  props: ["assemblerCost", "rolPath", "rol", "percentage"],
+  name: "AssemblerCost",
 };
 </script>

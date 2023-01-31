@@ -26,7 +26,7 @@ export default {
       },
       userData: {
         assembler: {
-          baseSalary: 2000000,
+          baseSalary: 1500000,
           hourOfWork: 0,
           extraHour: 0,
           assambleCost: 50000,
