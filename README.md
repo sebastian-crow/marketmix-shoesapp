@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <br>
   <a href="http://www.amitmerchant.com/electron-markdownify"><img src="./src/assets/img/LoginRol.jpeg" alt="Markdownify" width="200"></a>
@@ -9,14 +8,14 @@
 
 <h4 align="center">A minimal Shoes Store Manager <a href="https://vuejs.org" target="_blank">Vue.js</a>.</h4>
 
-
 <p align="center">
   <a href="#how-to-use">How To Use</a> •
   <a href="#license">License</a>
+  <a href="#live-demo">Live Demo</a>
+  
 </p>
 
 ![screenshot](./src/assets/img/preview.gif)
-
 
 ## How To Use
 
@@ -36,8 +35,18 @@ $ yarn install
 $ yarn serve
 ```
 
+## Live Demo
+
+```bash
+
+ https://github.com/sebastian-crow/marketmix-shoesapp
+
+
 ## License
 
 MIT
 
 ---
+
+> [SebastianCrow](https://github.com/sebastian-crow) &nbsp;&middot;&nbsp;
+```
