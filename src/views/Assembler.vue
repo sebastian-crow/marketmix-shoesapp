@@ -88,7 +88,7 @@
           </div>
         </template>
       </Collapse>
-      <div class="absolute top-[30rem] right-[-1.5rem]">
+      <div class="absolute top-[30rem] right-[-1.5rem]" v-if="isAdmin">
         <Navigation />
       </div>
     </div>
@@ -119,6 +119,7 @@ export default {
       monthSales: 5200000,
       bonification: 0,
       percentage: 0,
+      isAdmin: false,
     };
   },
   methods: {
@@ -132,6 +133,9 @@ export default {
         this.bonification +
         this.$parent.userData.assembler.transport +
         this.$parent.userData.assembler.assambleCost;
+    },
+    sendSalaryToParent() {
+      this.$parent.userData.assembler.salary = this.salary;
     },
     getChildrenBonification() {
       this.bonification =
@@ -175,6 +179,8 @@ export default {
     this.getChildrenBonification();
     this.getBonificationPerAssambledShoes();
     this.getBonificationPerAssambledSneakers();
+    this.sendSalaryToParent();
+    this.isAdmin = this.$parent.currentRol.rol === "admin" ? true : false;
   },
 };
 </script>

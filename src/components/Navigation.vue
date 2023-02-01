@@ -2,7 +2,7 @@
   <div class="w-40 grid grid-cols-2">
     <div>
       <router-link
-        to="/Vendor"
+        :to="route"
         type="button"
         class="rotate-180 text-blue-200 border border-blue-200 hover:bg-blue-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-200 dark:text-blue-200 dark:hover:text-white dark:focus:ring-blue-800 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
       >
@@ -24,7 +24,7 @@
     </div>
     <div>
       <router-link
-        to="/Assembler"
+        :to="routeRight"
         type="button"
         class="text-blue-200 border border-blue-200 hover:bg-blue-800 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-200 dark:text-blue-200 dark:hover:text-white dark:focus:ring-blue-800 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
       >
@@ -51,8 +51,39 @@
 export default {
   name: "Navigation",
   data() {
-    return {};
+    return {
+      route: "",
+      routeRight: "",
+      routes: ["Admin", "Vendor", "Secretary", "Assembler"],
+    };
   },
-  methods: {},
+  methods: {
+    getRoute() {
+      if (this.$router.history.current.name === "Secretary") {
+        this.route = "Vendor";
+      }
+      if (this.$router.history.current.name === "Vendor") {
+        this.route = "Assembler";
+      }
+      if (this.$router.history.current.name === "Assembler") {
+        this.route = "Admin";
+      }
+    },
+    getRouteRight() {
+      if (this.$router.history.current.name === "Assembler") {
+        this.routeRight = "Vendor";
+      }
+      if (this.$router.history.current.name === "Vendor") {
+        this.routeRight = "Secretary";
+      }
+      if (this.$router.history.current.name === "Secretary") {
+        this.routeRight = "Admin";
+      }
+    },
+  },
+  mounted() {
+    this.getRoute();
+    this.getRouteRight();
+  },
 };
 </script>

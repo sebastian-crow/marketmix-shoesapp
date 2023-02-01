@@ -19,29 +19,13 @@
         </div>
         <div class="flex items-center space-x-4 justify-between">
           <div class="flex gap-3 space-y-1">
-            <span class="text-sm" v-show="rolPath == 'Secretary'">
+            <span class="text-sm">
               Salario Base
-              {{ baseSalary }}
-            </span>
-            <span class="text-sm" v-show="rolPath == 'Vendor'">
-              Salario Base
-              {{ baseSalary }}
-              Comision
-              {{ salesComision }}
-            </span>
-            <span class="text-sm" v-show="rolPath == 'Assembler'">
-              Salario Base
-              {{ baseSalary }}
-              Cantidad de zapatos hechos
-              {{ amountShoesDone }}
-              Costo de ensamble por zapato
-              {{ assambleShoesCost }}
-              Cantidad maxima posible de ensamble
-              {{ maxShoesPossible }}
+              {{ baseSalary }} COP
             </span>
           </div>
           <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row">
-            <h1>Liquidación = 2.000.000 COP</h1>
+            <h1>Liquidación = {{ salary }} COP</h1>
           </div>
         </div>
       </div>
@@ -51,14 +35,6 @@
 
 <script>
 export default {
-  props: [
-    "rol",
-    "rolPath",
-    "baseSalary",
-    "salesComision",
-    "amountShoesDone",
-    "assambleShoesCost",
-    "maxShoesPossible",
-  ],
+  props: ["rol", "rolPath", "baseSalary", "salary"],
 };
 </script>

@@ -49,6 +49,7 @@ export default {
           salesComision: 3.5,
           additionalBonification: 0,
           transport: 140000,
+          salary: 0,
         },
       },
     };
@@ -64,15 +65,7 @@ export default {
     },
   },
   mounted() {
-    /*     if (this.currentRol) {
-      switch (this.currentRol) {
-        case "admin":
-          break;
-
-        default:
-          break;
-      }
-    } */
+    console.log("Say hi");
   },
 };
 </script>

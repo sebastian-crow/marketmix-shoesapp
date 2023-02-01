@@ -67,7 +67,7 @@
           </div>
         </template>
       </Collapse>
-      <div class="absolute top-96 right-4">
+      <div class="absolute top-96 right-4" v-if="isAdmin">
         <Navigation />
       </div>
     </div>
@@ -91,6 +91,7 @@ export default {
       hourOfWork: parseInt(this.$parent.userData.secretary.baseSalary / 240),
       extraHour: 0,
       salary: 0,
+      isAdmin: false,
     };
   },
   methods: {
@@ -101,6 +102,9 @@ export default {
       this.salary =
         this.$parent.userData.secretary.baseSalary + this.extraHour * 10;
     },
+    sendSalaryToParent() {
+      this.$parent.userData.secretary.salary = this.salary;
+    },
   },
   mounted() {
     if (!this.$parent.authenticated && !this.$parent.currentRol) {
@@ -108,6 +112,8 @@ export default {
     }
     this.getExtraHour();
     this.getSalary();
+    this.sendSalaryToParent();
+    this.isAdmin = this.$parent.currentRol.rol === "admin" ? true : false;
   },
 };
 </script>

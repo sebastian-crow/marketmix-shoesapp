@@ -20,44 +20,46 @@
         rol="Secretario/a"
         rolPath="Secretary"
         :baseSalary="this.$parent.userData.secretary.baseSalary"
+        :salary="this.$parent.userData.secretary.salary"
       />
       <Card
         rol="Vendedor/a"
         rolPath="Vendor"
         :baseSalary="this.$parent.userData.vendor.baseSalary"
-        :salesComision="this.$parent.userData.vendor.salesComision"
+        :salary="this.$parent.userData.vendor.salary"
       />
       <Card
         rol="Ensamblador"
         rolPath="Assembler"
         :baseSalary="this.$parent.userData.assembler.baseSalary"
-        :amountShoesDone="this.$parent.userData.assembler.amountShoesDone"
-        :assambleShoesCost="this.$parent.userData.assembler.assambleShoesCost"
-        :maxShoesPossible="this.$parent.userData.assembler.maxShoesPossible"
+        :salary="this.$parent.userData.assembler.salary"
       />
     </div>
-    <h1>Gastos totales = 10.000.000 COP</h1>
+    <h1>Gastos totales en personal = {{ totalAmount }} COP</h1>
   </div>
 </template>
 
 <script>
 import Card from "../components/Card.vue";
 
-/* const userData = ; */
 export default {
   name: "Secure",
   data() {
-    return {};
+    return {
+      totalAmount:
+        this.$parent.userData.secretary.salary +
+        this.$parent.userData.vendor.salary +
+        this.$parent.userData.assembler.salary,
+    };
   },
   mounted() {
     if (!this.$parent.authenticated && !this.$parent.currentRol) {
       this.$router.replace({ name: "Login" });
     }
   },
-  methods: {
-    logoutHere() {
-      console.log("Logout here");
-    },
+  methods: {},
+  mounted() {
+    console.log();
   },
 };
 </script>

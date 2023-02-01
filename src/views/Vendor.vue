@@ -82,7 +82,7 @@
           </div>
         </template>
       </Collapse>
-      <div class="absolute top-[26.8rem] right-[-1.5rem]">
+      <div class="absolute top-[26.8rem] right-[-1.5rem]" v-if="isAdmin">
         <Navigation />
       </div>
     </div>
@@ -113,6 +113,7 @@ export default {
       monthSales: 5200000,
       bonification: 0,
       percentage: 0,
+      isAdmin: false,
     };
   },
   methods: {
@@ -125,6 +126,9 @@ export default {
         this.extraHour * 20 +
         this.bonification +
         this.$parent.userData.vendor.transport;
+    },
+    sendSalaryToParent() {
+      this.$parent.userData.vendor.salary = this.salary;
     },
     getBonification() {
       if (this.monthSales >= 5000000) {
@@ -148,6 +152,8 @@ export default {
     this.getExtraHour();
     this.getSalary();
     this.getBonification();
+    this.sendSalaryToParent();
+    this.isAdmin = this.$parent.currentRol.rol === "admin" ? true : false;
   },
 };
 </script>
