@@ -6,7 +6,7 @@
       class="mx-auto w-full block w-4/12 h-40 rounded-lg"
       alt="art cover"
       loading="lazy"
-      src="https://picsum.photos/seed/2/2000/1000"
+      :src="url"
     />
     <div class="sm:w-8/12 pl-0 p-5">
       <div class="space-y-2">
@@ -19,13 +19,20 @@
         </div>
         <div class="flex items-center space-x-4 justify-between">
           <div class="flex gap-3 space-y-1">
-            <span class="text-sm">
+            <span class="text-md text-slate-300">
               Salario Base
-              {{ baseSalary }} COP
+              <code class="text-blue-100 bg-slate-700"
+                >{{ baseSalary }} COP</code
+              >
             </span>
           </div>
-          <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row">
-            <h1>Liquidación = {{ salary }} COP</h1>
+          <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row text-lg">
+            <h1>
+              <code class="text-blue-100 bg-slate-800 rounded-md">
+                Liquidación = <br />
+                {{ salary }} COP</code
+              >
+            </h1>
           </div>
         </div>
       </div>
@@ -35,6 +42,6 @@
 
 <script>
 export default {
-  props: ["rol", "rolPath", "baseSalary", "salary"],
+  props: ["rol", "rolPath", "baseSalary", "salary", "url"],
 };
 </script>
