@@ -62,7 +62,6 @@ export default {
       this.authenticated = false;
       localStorage.removeItem("user");
       this.$router.replace({ name: "Login" });
-      location.reload();
     },
   },
   mounted() {
