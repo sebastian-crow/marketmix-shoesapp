@@ -35,11 +35,27 @@ $ yarn install
 $ yarn serve
 ```
 
+Do not forget to use these variables to enter.
+
+```bash
+# Admin's role
+$ pin: 9740
+
+# Secretary's role
+$ pin: 9741
+
+# Vendor's role
+$ pin: 9742
+
+# Assembler's role
+$ pin: 9743
+```
+
 ## Live Demo
 
 ```bash
 
- https://github.com/sebastian-crow/marketmix-shoesapp
+ https://main--heroic-boba-87cb31.netlify.app
 
 ```
 
@@ -50,7 +66,3 @@ MIT
 ---
 
 > [SebastianCrow](https://github.com/sebastian-crow) &nbsp;&middot;&nbsp;
-
-```
-
-```
