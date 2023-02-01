@@ -6,11 +6,11 @@
   <br>
 </h1>
 
-<h4 align="center">A minimum manageable shoe store <a href="https://vuejs.org" target="_blank">Vue.js</a>.</h4>
+<h4 align="center">A minimum manageable shoe store app built on top of<a href="https://vuejs.org" target="_blank">Vue.js</a>.</h4>
 
 <p align="center">
   <a href="#how-to-use">How To Use</a> •
-  <a href="#license">License</a>
+  <a href="#license">License</a> •
   <a href="#live-demo">Live Demo</a>
   
 </p>
@@ -65,4 +65,4 @@ MIT
 
 ---
 
-> [SebastianCrow](https://github.com/sebastian-crow) &nbsp;&middot;&nbsp;
+> [SebastianCrow](https://github.com/sebastian-crow) 
