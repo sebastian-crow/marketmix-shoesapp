@@ -54,8 +54,11 @@ $ pin: 9743
 ## Live Demo
 
 ```bash
-
- https://main--heroic-boba-87cb31.netlify.app
+# Netlify
+ $ https://main--heroic-boba-87cb31.netlify.app
+ 
+ # Github Pages
+ $ https://sebastian-crow.github.io/marketmix-shoesapp/
 
 ```
 
