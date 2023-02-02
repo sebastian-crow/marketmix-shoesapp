@@ -28,7 +28,6 @@ Temporary Items
 .apdisk
 
 ## Vue.js
-
 .DS_Store
 node_modules
 /dist
